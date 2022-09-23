@@ -1,4 +1,4 @@
-name: CI
+name: Slither Test
 on:
   push:
     branches:
@@ -21,9 +21,6 @@ jobs:
 
       - name: Install deps
         run: forge install
-
-      - name: Check gas snapshots
-        run: forge snapshot --check
 
       - name: Run tests
         run: forge test
