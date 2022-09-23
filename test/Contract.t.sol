@@ -12,12 +12,9 @@ contract TestContract is Test {
         c = new Contract();
     }
 
-    function testBar() public {
-        assertEq(uint256(1), uint256(1), "ok");
+    function test_Bar_lessThan100_thenReturnFalse() public {
+        bool ret = c.bar(50);
+        assertTrue(!ret);
     }
 
-    function testFoo(uint256 x) public {
-        vm.assume(x < type(uint128).max);
-        assertEq(x + x, x * 2);
-    }
 }
